@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html xmlns:th="[http://www.thymeleaf.org](http://www.thymeleaf.org/)">
+
+<head>
+	<title>Pizza Shoppe</title>
+	<link th:href="@{/css/style.css}" rel="stylesheet" />
+	<!-- Author:      Sarah McCrie
+        Program:      index.html
+        Description:  This is my midterm index page
+    -->
+	<link rel="icon" type="image/x-icon" th:href="@{/images/pizza.png/}" />
+</head>
+
+<body>
+	<div class="imageAndHeading">
+		<img class="pizzaImage" th:src="@{/images/pizza.png}" alt="Pizza Image" />
+		<h1> The Pizza Shoppe</h1>
+	</div>
+	<div class="linkHolder">
+		<a th:href="@{/viewPizzaRecord}">View Pizzas in Cart</a>
+		<a th:href="@{/searchPizzaRecord}">Search Pizzas in Cart</a>
+	</div>
+
+	<!-- Form area for entering new pizza record -->
+	<div class="formarea">
+		<form method="post" action="#" th:action="@{/}"     th:object="${pizza}">
+
+			<div class="labelAndInput"> <label class="label">ID:</label> <input type="number" th:field="*{id}"
+					class="doNotTouch" readonly min="0" required="required" /> </div>
+			<br>
+
+			<div class="labelAndInput"> <label class="label">Title:</label> <input type="text"
+					placeholder="Please enter title" th:field="*{title}" />
+			</div> <br>
+
+			<div class="labelAndInput"> <label class="label">Price:</label> <input type="text"
+					placeholder="Please enter price" th:field="*{price}" /> </div> <br>
+
+			<div class="labelAndInput"> <label class="label">Description:</label> <input type="text"
+					placeholder="Please enter description" th:field="*{description}" /> </div> <br>
+
+			<div class="labelAndInput"> <label class="label">Link:</label> <input type="text"
+					placeholder="Please enter website link" th:field="*{link}" /> </div>
+			<br>
+
+
+			<input type="submit" class="addPizzaButton" value="Add Pizza!" id="addPizzaButton" />
+
+		</form>
+	</div>
+
+	<!-- if the boolean successfulAdd = true, message will show -->
+	<p class="successfulAdd" th:if="${successfulAdd}">Your pizza has been added sucessfully!</p>
+
+</body>
+
+</html>

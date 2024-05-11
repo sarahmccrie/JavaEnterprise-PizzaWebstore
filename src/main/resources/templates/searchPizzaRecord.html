@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html xmlns:th="[http://www.thymeleaf.org](http://www.thymeleaf.org/)">
+
+<head>
+	<title>Search Pizzas</title>
+	<link th:href="@{/css/style.css}" rel="stylesheet" />
+	<!-- Author:      Sarah McCrie
+        Program:      searchPizzaRecord.html
+        Description:  This is my midterm searchPizzaRecord page
+    -->
+	<link rel="icon" type="image/x-icon" th:href="@{/images/pizza.png/}" />
+</head>
+
+<body>
+	<div class="imageAndHeadingSearch">
+		<img class="pizzaImageSearch" th:src="@{/images/pizza.png}" alt="Pizza Image" />
+		<h1>Search Pizzas in Cart</h1>
+	</div>
+	<div class="linkHolder">
+		<a th:href="@{/}">Return to Homepage</a>
+		<a th:href="@{/viewPizzaRecord}">View Pizza Records</a>
+	</div>
+	<div class="formarea">
+		<form method="post" action="#" th:action="@{/searchPizzaRecord}"     th:object="${pizza}">
+
+			<div class="labelAndInput"> <label class="label">ID:</label> <input type="number" class="searchId"
+					th:field="*{id}" /> </div> <br>
+
+			<input type="submit" class="searchPizzaButton" value="Search by ID!" id="searchPizzaButton" />
+
+		</form>
+	</div>
+
+	<p class="noPizzas" th:if="${isIdMatching==false}">There are no matching pizzas to the ID entered.</p>
+
+	<div th:if="${isIdMatching==true}" class="tableArea">
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>Title</th>
+				<th>Price</th>
+				<th>Description</th>
+				<th>Link</th>
+				<th>Action</th>
+				<th>Action</th>
+			</tr>
+
+			<tr>
+				<td th:text="${foundPizza.id}"></td>
+				<td th:text="${foundPizza.title}"></td>
+				<td th:text="${foundPizza.price}"></td>
+				<td th:text="${foundPizza.description}"></td>
+				<td><a class=pizzaLinks th:href="${foundPizza.link}" th:text="${foundPizza.link}"></a></td>
+				<td><a th:href="@{/deletePizzaById/}+${foundPizza.id}">Delete</a></td>
+				<td><a th:href="@{/editPizzaById/}+${foundPizza.id}">Edit</a></td>
+			</tr>
+		</table>
+	</div>
+</body>
+
+</html>

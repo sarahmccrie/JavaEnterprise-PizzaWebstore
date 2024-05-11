@@ -1,0 +1,176 @@
+input.doNotTouch {
+	pointer-events: none;
+}
+
+html {
+	display: table;
+	margin: auto;
+}
+
+body {
+	display: block;
+
+}
+
+h1 {
+	color: orangered;
+	padding: 10px;
+	margin-top: 40px;
+	text-align: center;
+}
+
+.imageAndHeading {
+	display: flex;
+}
+
+.imageAndHeadingView {
+	display: flex;
+	justify-content: center;
+}
+
+.imageAndHeadingSearch {
+	display: flex;
+	justify-content: center;
+}
+
+
+.pizzaImage {
+	width: 50px;
+	height: 50px;
+	margin-top: 40px;
+	margin-left: 10%;
+}
+
+.pizzaImageSearch {
+	width: 50px;
+	height: 50px;
+	margin-top: 40px;
+	margin-left: 0%;
+}
+
+a {
+	font-size: 16px;
+	font-weight: bold;
+	color: white;
+	padding: 10px;
+	background-color: orangered;
+	margin: 10px;
+	margin-bottom: 20px;
+}
+
+a:hover {
+	background-color: #E7E6E2;
+	color: orangered;
+	font-weight: bold;
+}
+
+.pizzaLinks {
+	color: black;
+	background-color: white;
+}
+
+.linkHolder {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.formarea {
+	padding-left: 5%;
+	border-style: double;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: #E3E2E7;
+}
+
+label {
+	text-align: right;
+	margin-left: 10px;
+	font-weight: bold;
+	font-size: 20px;
+	color:  orangered;
+	padding-top: 6px;
+
+}
+
+input {
+	padding: 4px;
+	margin: 4px;
+	width: 200px;
+}
+
+.labelAndInput {
+	display: flex;
+	justify-content: end;
+}
+
+.addPizzaButton {
+	margin-left: 16%;
+	padding: 10px 2px;
+	width: 70%;
+}
+
+
+.searchPizzaButton {
+	margin-left: 16%;
+	width: 95%;
+	padding: 10px 2px;
+}
+
+.addPizzaButton:hover,
+.searchPizzaButton:hover {
+	background-color: #5A5F61;
+	color: white;
+	font-weight: bold;
+}
+
+.formarea {
+	position: relative;
+	display: flex;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+
+
+table {
+	margin-top: 40px;
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 20px
+}
+
+table,
+th,
+td {
+	border: 1px solid #333;
+}
+
+th,
+td {
+	padding: 10px;
+	text-align: left;
+}
+
+th {
+	background-color:  orangered;
+	color: white;
+}
+
+.successfulAdd {
+	text-align: center;
+	font-size: 20px;
+	background-color: #E3E2E7;
+	width: 100%;
+	padding: 20px 0px;
+}
+
+.noPizzas {
+	text-align: center;
+	font-size: 20px;
+	background-color: #E3E2E7;
+	width: 100%;
+	padding: 20px 0px;
+}

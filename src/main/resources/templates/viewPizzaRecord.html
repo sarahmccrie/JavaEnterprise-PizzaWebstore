@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html xmlns:th="[http://www.thymeleaf.org](http://www.thymeleaf.org/)">
+
+<head>
+	<title>View Pizzas</title>
+	<link th:href="@{/css/style.css}" rel="stylesheet" />
+	<!-- Author:      Sarah McCrie
+        Program:      viewPizzaRecord.html
+        Description:  This is my midterm viewPizzaRecord page
+    -->
+    <link rel="icon" type="image/x-icon" th:href="@{/images/pizza.png/}" />
+</head>
+
+<body>
+	<div class="fullPage">
+		<div class="imageAndHeadingView">
+			<img class="pizzaImageSearch" th:src="@{/images/pizza.png}" alt="Pizza Image" />
+			<h1>View Pizzas in Cart</h1>
+		</div>
+		<div class="linkHolder">
+			<a th:href="@{/}">Return to Homepage</a>
+			<a th:href="@{/searchPizzaRecord}">Search Pizzas in Cart</a>
+		</div>
+		<div th:if="${not #lists.isEmpty(pizzaList)}">
+			<table>
+				<tr>
+					<th>ID</th>
+					<th>Title</th>
+					<th>Price</th>
+					<th>Descrition</th>
+					<th>Link</th>
+					<th>Action</th>
+					<th>Action</th>
+				</tr>
+
+				<tr th:each="aPizza:${pizzaList}">
+					<td th:text="${aPizza.id}"></td>
+					<td th:text="${aPizza.title}"></td>
+					<td th:text="${aPizza.price}"></td>
+					<td th:text="${aPizza.description}"></td>
+					<td><a class=pizzaLinks th:href="${aPizza.link}" th:text="${aPizza.link}"></a></td>
+					<td><a th:href="@{/deletePizzaById/}+${aPizza.id}">Delete</a></td>
+					<td><a th:href="@{/editPizzaById/}+${aPizza.id}">Edit</a></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<p class="noRecords" th:if="${#lists.isEmpty(pizzaList)}">There are currently no pizzas in your cart. <br> Please return to the
+    home page to add a pizza.</p>
+
+</body>
+
+</html>
